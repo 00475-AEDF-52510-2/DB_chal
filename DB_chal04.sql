@@ -1,7 +1,14 @@
 -- USE classicmodels;
 -- 1. customers 테이블에 새 고객 추가
-INSERT INTO customers (customerName, phone, address)
-VALUES ("Sangwoo", "01012341234", "South Korea");
+INSERT INTO customers (
+  customerNumber, customerName, contactLastName, contactFirstName,
+  phone, addressLine1, city, country, salesRepEmployeeNumber, creditLimit
+)
+VALUES (
+  9999, 'Sangwoo', 'Jeong', 'Sangwoo',
+  '01012341234', '123 Worldcup St', 'Seoul', 'South Korea', 1000, 100000
+);
+
 
 -- 2. products 테이블에 새 제품 추가
 INSERT INTO products (productName, quantity, price)
@@ -20,7 +27,7 @@ INSERT INTO orders (orderNumber, orderDate, customerNumber)
 VALUES (1234, "2025-05-05", 123);
 
 -- 6. orderdetails 테이블에 주문 상세 추가
-INSERT INTO orderdetails (orderNumber, orderAddress, productCode, quantity)
+INSERT INTO orderdetails (orderNumber, address, productCode, quantity)
 VALUES (1357, "South Korea", 1234, 1);
 
 -- 7. payments 테이블에 지불 정보 추가
